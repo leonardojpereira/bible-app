@@ -10,57 +10,46 @@ export const BibleContainer = styled.div`
     position: relative;
     padding: 0 40px;
 `
-export const Title = styled.h1`
-   margin-bottom: 22px;
-   color: #873e23;
-`
+
 export const Subtitle = styled.span`
-   
+   font-size: 18px;
+  
 `
+
 export const BookContainer = styled.div`
-    display: flex;
+  display: flex;    
     margin: 22px 0;
 `
 export const Mimic = styled.div`
    margin: 0 8px;
+
 `
 
-export const TitleSelect = styled.span`
+export const InputTitle = styled.label`
     margin-right: 4px;
 `
 
 
-export const SelectBook = styled.input`
-    width: 180px;
+export const InputBook = styled.input`
+    width: 140px;
     height: 30px;
+    padding-left: 4px; 
 `
 
 
-export const BookOption = styled.option`
- 
-`
-
-
-export const SelectChapter = styled.input`
+export const InputChapter = styled.input`
       height: 30px;
-      width: 30px;
+      width: 60px;
+      padding-left: 4px; 
 `
 
 
-export const ChapterOption = styled.option`
-
-`
-
-
-export const SelectVerse = styled.input`
+export const InputVerse = styled.input`
       height: 30px;
-      width: 30px;
+      width: 60px;
+      padding-left: 4px; 
 `
 
-
-export const VerseOption = styled.option`
-
-`
 
 export const ButtonSearch = styled.button`
    width: 100%;

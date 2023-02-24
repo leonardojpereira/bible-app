@@ -1,6 +1,7 @@
-import { BibleContainer, Title, Subtitle, BookContainer, Mimic, TitleSelect, SelectBook, SelectChapter, SelectVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText } from "./style"
+import { BibleContainer, Subtitle, BookContainer, Mimic, InputTitle, InputBook, InputChapter, InputVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText } from "./style"
+import { Title } from "../TItle";
 import { useState } from 'react';
-import axios from 'axios';
+import api from "../../services/api";
 export default function Bible() {
 
     const [book, setBook] = useState('');
@@ -11,7 +12,7 @@ export default function Bible() {
 
 
     async function handleSearch() {
-        axios.get(`https://bible-api.com/${book}+${chapter}:${verses}?translation=almeida`)
+        api.get(`${book}+${chapter}:${verses}?translation=almeida`)
             .then(res => {
                 setDisplayVerses([{
                     text: res.data.text,
@@ -20,28 +21,30 @@ export default function Bible() {
                     verses: verses
                 }])
             }).catch((err) => {
-                console.log(err);
+                setDisplayVerses([{
+                    text: 'Desculpe, não foi possível localizar nenhum versículo :/'
+                }]);
             })
 
     }
 
     return (
         <BibleContainer>
-            <Title>Bíblia Digital</Title>
-            <Subtitle>* Selecione o Livro, Capítulo e Versículo que queira ler</Subtitle>
+            <Title large>Bíblia Digital</Title>
+            <Subtitle>* Digite o Livro, Capítulo e Versículo que queira ler</Subtitle>
             <BookContainer>
                 <Mimic>
-                    <TitleSelect>Livro</TitleSelect>
-                    <SelectBook value={book} onChange={(e) => setBook(e.target.value)} />
+                    <InputTitle rel="book">Livro</InputTitle>
+                    <InputBook required name="book" type="text" value={book} onChange={(e) => setBook(e.target.value)} />
                 </Mimic>
                 <Mimic>
-                    <TitleSelect>Capítulo</TitleSelect>
-                    <SelectChapter value={chapter} onChange={(e) => setChapter(e.target.value)} />
+                    <InputTitle  rel="chapter">Capítulo</InputTitle>
+                    <InputChapter required name="chapter" type="number" value={chapter} onChange={(e) => setChapter(e.target.value)} />
 
                 </Mimic>
                 <Mimic>
-                    <TitleSelect>Versículo</TitleSelect>
-                    <SelectVerse value={verses} onChange={(e) => setVerses(e.target.value)} />
+                    <InputTitle rel="verse">Versículo</InputTitle>
+                    <InputVerse required name="verse" type="number" value={verses} onChange={(e) => setVerses(e.target.value)} />
                 </Mimic>
 
             </BookContainer>
@@ -53,7 +56,7 @@ export default function Bible() {
                 <div key={item}>
                     <TitleContainer>
                         <BookTitle>{item.book}</BookTitle>
-                        <ChapterNumber>{item.chapter}</ChapterNumber> : <VerseNumber>{item.verses}</VerseNumber>
+                        <ChapterNumber>{item.chapter}</ChapterNumber> <VerseNumber>{item.verses}</VerseNumber>
                     </TitleContainer>
                     <VerseText>{item.text}</VerseText>
                 </div>
