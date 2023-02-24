@@ -11,7 +11,6 @@ const ImgBanner = styled.img`
     height: 100%;
     image-position: center;
     object-fit: cover;
-    opacity: 0.8;
 `
 
 const TextContainer = styled.div`
@@ -23,7 +22,7 @@ const TextContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #873e23;
+    background: rgba(255,255,255, 0.3);
     max-width: 300px;
     width: 100%;
     height: 300px;
@@ -35,12 +34,12 @@ const Text = styled.p`
     text-align: center;
     text-transform: uppercase;
     color: #FFF;
-
+    font-weight: bold;
 `
 const Subtitle = styled.div`
     position: absolute;
     top: 20%;
-    color: #873e23;
+    color: #FFF;
     left: 50%;
     transform: translate(-50%, -50%);
     top: 80%;

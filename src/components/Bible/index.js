@@ -1,4 +1,4 @@
-import { BibleContainer, Subtitle, BookContainer, Mimic, InputTitle, InputBook, InputChapter, InputVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText } from "./style"
+import { BibleContainer, Subtitle, BookContainer, Mimic, InputTitle, InputBook, InputChapter, InputVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText, ButtonContainer, ButtonClear } from "./style"
 import { Title } from "../TItle";
 import { useState } from 'react';
 import api from "../../services/api";
@@ -28,6 +28,13 @@ export default function Bible() {
 
     }
 
+    function handleClear() {
+        setBook('');
+        setChapter('');
+        setVerses('');
+        setDisplayVerses([{}]);
+    }
+
     return (
         <BibleContainer>
             <Title large>Bíblia Digital</Title>
@@ -48,7 +55,11 @@ export default function Bible() {
                 </Mimic>
 
             </BookContainer>
+            <ButtonContainer>
+            <ButtonClear onClick={handleClear}>Limpar</ButtonClear>
             <ButtonSearch onClick={handleSearch}>Buscar</ButtonSearch>
+            </ButtonContainer>
+           
 
 
             <Description>
