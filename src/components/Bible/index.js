@@ -1,4 +1,4 @@
-import { BibleContainer, Subtitle, BookContainer, Mimic, InputTitle, InputBook, InputChapter, InputVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText, ButtonContainer, ButtonClear } from "./style"
+import { BibleContainer, Subtitle, BookContainer, Mimic, InputTitle, InputBook, InputChapter, InputVerse, Description, ButtonSearch, TitleContainer, BookTitle, ChapterNumber, VerseNumber, VerseText, ButtonContainer, ButtonClear, Colon } from "./style"
 import { Title } from "../TItle";
 import { useState } from 'react';
 import api from "../../services/api";
@@ -18,7 +18,8 @@ export default function Bible() {
                     text: res.data.text,
                     book: book,
                     chapter: chapter,
-                    verses: verses
+                    verses: verses,
+                    colon: ':'
                 }])
             }).catch((err) => {
                 setDisplayVerses([{
@@ -67,7 +68,7 @@ export default function Bible() {
                 <div key={item}>
                     <TitleContainer>
                         <BookTitle>{item.book}</BookTitle>
-                        <ChapterNumber>{item.chapter}</ChapterNumber> <VerseNumber>{item.verses}</VerseNumber>
+                        <ChapterNumber>{item.chapter}</ChapterNumber> <Colon>{item.colon}</Colon> <VerseNumber>{item.verses}</VerseNumber>
                     </TitleContainer>
                     <VerseText>{item.text}</VerseText>
                 </div>

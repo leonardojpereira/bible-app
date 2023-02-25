@@ -88,7 +88,9 @@ export const Description = styled.div`
     height: 150px;
     border-radius: 8px;
     margin-top: 22px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const TitleContainer = styled.div`
@@ -102,21 +104,32 @@ export const TitleContainer = styled.div`
 export const BookTitle = styled.h3`
    text-transform: capitalize;
    margin-right: 5px;
-   font-size: 18px
+   font-size: 18px;
+   color: #ffc300;
 `
 
 
 export const ChapterNumber = styled.span`
-    font-size: 18px
+    font-size: 18px;
+    color: #ffc300;
 `
 
 
 export const VerseNumber = styled.span`
-    font-size: 18px
+    font-size: 18px;
+    color: #ffc300;
 `
 
 
 export const VerseText = styled.p`
     color: #FFF;
 `
+
+export const Colon = styled.span`
+    font-size: 18px;
+    margin: 0 2px;
+    color: #f5cc17;
+`
+
+
 
