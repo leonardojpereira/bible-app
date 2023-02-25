@@ -14,15 +14,19 @@ export const BibleContainer = styled.div`
 
 export const Subtitle = styled.span`
    font-size: 18px;
-  
+
+`
+
+export const Strong = styled.strong`
+   color: #ff461d;
 `
 
 export const BookContainer = styled.div`
-  display: flex;    
+    display: flex;    
     margin: 22px 0;
 `
 export const Mimic = styled.div`
-   margin: 0 8px;
+    margin: 0 8px;
 
 `
 
@@ -30,25 +34,25 @@ export const InputTitle = styled.label`
     margin-right: 4px;
 `
 
-
 export const InputBook = styled.input`
     width: 140px;
     height: 30px;
     padding-left: 4px; 
+    outline: none;
 `
-
 
 export const InputChapter = styled.input`
       height: 30px;
       width: 60px;
       padding-left: 4px; 
+      outline: none;
 `
-
 
 export const InputVerse = styled.input`
       height: 30px;
       width: 60px;
       padding-left: 4px; 
+      outline: none;
 `
 
 export const ButtonContainer = styled.div`
@@ -68,6 +72,7 @@ export const ButtonClear = styled.button`
       background: linear-gradient(to left, #ff461d, #803ca8);
       color: #FFF;
       margin: 0 8px;
+      outline: none;
 `
 
 export const ButtonSearch = styled.button`
@@ -79,6 +84,7 @@ export const ButtonSearch = styled.button`
    background: linear-gradient(to right,#803ca8, #ff461d);
    color: #FFF;
    margin: 0 8px;
+   outline: none;
 `
 
 export const Description = styled.div`
