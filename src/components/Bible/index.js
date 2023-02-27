@@ -8,33 +8,36 @@ import {
     InputChapter,
     InputVerse,
     Description,
-    ButtonSearch,
     TitleContainer,
     BookTitle,
     ChapterNumber,
     VerseNumber,
     VerseText,
     ButtonContainer,
-    ButtonClear,
     Colon,
-    Strong
+    Strong, 
+    Icon, 
+    DescriptionContainer
 } from "./style"
 import { Title } from "../TItle";
+import { ButtonSearch, ButtonClear } from "../Button";
 import { useState } from 'react';
+import { AiOutlineClear } from 'react-icons/ai';
+import { BiSearchAlt } from 'react-icons/bi';
 import api from "../../services/api";
 export default function Bible() {
 
     const [book, setBook] = useState('');
     const [chapter, setChapter] = useState('');
     const [verses, setVerses] = useState('');
-    const [displayVerses, setDisplayVerses] = useState([{}]);
+    const [display, setDisplay] = useState([{}]);
 
 
 
     async function handleSearch() {
         api.get(`${book}+${chapter}:${verses}?translation=almeida`)
             .then(res => {
-                setDisplayVerses([{
+               setDisplay([{
                     text: res.data.text,
                     book: book,
                     chapter: chapter,
@@ -42,7 +45,7 @@ export default function Bible() {
                     colon: ':'
                 }])
             }).catch((err) => {
-                setDisplayVerses([{
+               setDisplay([{
                     text: 'Desculpe, não foi possível localizar nenhum versículo :/'
                 }]);
             })
@@ -53,7 +56,7 @@ export default function Bible() {
         setBook('');
         setChapter('');
         setVerses('');
-        setDisplayVerses([{}]);
+       setDisplay([{}]);
     }
 
     return (
@@ -77,21 +80,21 @@ export default function Bible() {
 
             </BookContainer>
             <ButtonContainer>
-                <ButtonClear onClick={handleClear}>Limpar</ButtonClear>
-                <ButtonSearch onClick={handleSearch}>Buscar</ButtonSearch>
+                <ButtonSearch onClick={handleSearch}>Buscar  <Icon><BiSearchAlt/></Icon></ButtonSearch>
+                <ButtonClear onClick={handleClear}>Limpar  <Icon><AiOutlineClear/></Icon></ButtonClear>
             </ButtonContainer>
 
 
 
             <Description>
-                {displayVerses.map((item) => (
-                    <div key={item}>
+                {display.map((item) => (
+                    <DescriptionContainer key={item}>
                         <TitleContainer>
                             <BookTitle>{item.book}</BookTitle>
                             <ChapterNumber>{item.chapter}</ChapterNumber> <Colon>{item.colon}</Colon> <VerseNumber>{item.verses}</VerseNumber>
                         </TitleContainer>
                         <VerseText>{item.text}</VerseText>
-                    </div>
+                    </DescriptionContainer>
                 ))}
             </Description>
         </BibleContainer>

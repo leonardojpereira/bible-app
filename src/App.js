@@ -1,4 +1,4 @@
-import GlobalStyle from "./style";
+import GlobalStyle from "./GlobalStyle";
 import Banner from "./components/Banner";
 import { Container } from "./style";
 import Bible from "./components/Bible";
@@ -12,6 +12,8 @@ function App() {
      <Banner/>
      <Bible/>
     </Container>
+
+      
     </>
     
     

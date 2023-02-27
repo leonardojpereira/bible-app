@@ -4,17 +4,24 @@ export const BibleContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 50%;
     height: 100%;
     position: relative;
     padding: 0 40px;
     background: #FFF;
+    margin-top: 18px;
+    @media (max-width: 660px) {
+        width: 100%;
+        margin: 22px 0;
+    }
 `
 
 export const Subtitle = styled.span`
    font-size: 18px;
-
+   text-align: center;
+   @media (max-width: 320px) {
+    font-size: 14px;
+ }
 `
 
 export const Strong = styled.strong`
@@ -22,16 +29,21 @@ export const Strong = styled.strong`
 `
 
 export const BookContainer = styled.div`
-    display: flex;    
     margin: 22px 0;
+    display: flex;
+    flex-direction: column;
 `
 export const Mimic = styled.div`
-    margin: 0 8px;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
 `
 
 export const InputTitle = styled.label`
     margin-right: 4px;
+    margin-bottom: 2px;
 `
 
 export const InputBook = styled.input`
@@ -39,6 +51,7 @@ export const InputBook = styled.input`
     height: 30px;
     padding-left: 4px; 
     outline: none;
+    width: 100%;
 `
 
 export const InputChapter = styled.input`
@@ -46,6 +59,7 @@ export const InputChapter = styled.input`
       width: 60px;
       padding-left: 4px; 
       outline: none;
+      width: 100%;
 `
 
 export const InputVerse = styled.input`
@@ -53,6 +67,7 @@ export const InputVerse = styled.input`
       width: 60px;
       padding-left: 4px; 
       outline: none;
+      width: 100%;
 `
 
 export const ButtonContainer = styled.div`
@@ -62,41 +77,31 @@ export const ButtonContainer = styled.div`
     width: 100%;
 `
 
-export const ButtonClear = styled.button`
-      height: 30px;
-      width: 40%;
-      padding-left: 4px; 
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(to left, #ff461d, #803ca8);
-      color: #FFF;
-      margin: 0 8px;
-      outline: none;
-`
-
-export const ButtonSearch = styled.button`
-   width: 40%;
-   height: 30px;
-   border-radius: 8px;
-   border: none;
-   cursor: pointer;
-   background: linear-gradient(to right,#803ca8, #ff461d);
-   color: #FFF;
-   margin: 0 8px;
-   outline: none;
+export const Icon = styled.i`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-left: 4px;
+    @media (max-width: 320px) {
+        font-size: 16px;
+     }
 `
 
 export const Description = styled.div`
     background: linear-gradient(to left,#803ca8, #ff461d);
-    padding: 18px;
+    padding: 22px;
     width: 100%;
-    height: 150px;
     border-radius: 8px;
     margin-top: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
+`
+
+export const DescriptionContainer = styled.div`
+    
 `
 
 export const TitleContainer = styled.div`

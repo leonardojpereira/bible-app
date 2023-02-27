@@ -1,18 +1,13 @@
-import styled, { createGlobalStyle } from 'styled-components'
-
-const GlobalStyle = createGlobalStyle`
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
-  }
-`
+import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
     display: flex;
+    overflow: hidden;
+    @media (max-width: 660px) {
+        display: block;
+        overflow: auto;
+      }
 `
-export default GlobalStyle;
