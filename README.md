@@ -33,7 +33,7 @@ Como estilo, aderi pelo Styled-Components.
 ## :link: Deploy
 
 ```
-EM BREVE
+https://digitalbible.netlify.app/
 ```
 
 ## Imagem / Icones
