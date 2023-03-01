@@ -4,7 +4,7 @@ const BannerContainer = styled.div`
     width: 50%;
     height: 100vh;
     position: relative;
-    @media (max-width: 660px) {
+    @media (max-width: 930px) {
         width: 100%;
         height: 50vh; 
     }
@@ -27,42 +27,36 @@ const TextContainer = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255,255,255, 0.3);
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
-    height: 300px;
+    height: 400px;
     border-radius: 8px;
-    @media (max-width: 660px) {
-        height: 200px;
-    }
-    @media (max-width: 320px) {
-        max-width: 250px;
+    @media (max-width: 430px) {
+        max-width: 260px;
+        height: 250px;
     }
 `
 const Text = styled.p`
-    padding: 15px 8px;
-    font-size: 18px;
+    padding: 28px 8px;
+    font-size: 24px;
     text-align: center;
     text-transform: uppercase;
     color: #FFF;
     font-weight: bold;
-    @media (max-width: 660px) {
-        font-size: 14px;
+    @media (max-width: 430px) {
+       font-size: 15px;
+       padding: 18px 8px;
     }
 `
 const Subtitle = styled.p`
-    position: absolute;
+    position: relative;
+    top: 20%;
     color: #FFF;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 80%;
     text-transform: uppercase;
     font-weight: bold;
-    @media (max-width: 660px) {
-        top: 90%;
-    }
-    @media (max-width: 320px) {
-        font-size: 14px;
-        text-align: center;
+    font-size: 18px;
+    @media (max-width: 430px) {
+       font-size: 16px;
     }
 `
 

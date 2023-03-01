@@ -10,8 +10,9 @@ export default function Banner() {
                 <Text>Os que tratam os outros</Text>
                 <Text>Com justiça e guarda</Text>
                 <Text>Os que lhe obedecem</Text>
+                <Subtitle>Provérbios 2:8</Subtitle>    
             </TextContainer>
-            <Subtitle>Provérbios 2:8</Subtitle>         
+                
         </BannerContainer>
     )
 }
