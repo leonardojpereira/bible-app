@@ -6,7 +6,7 @@ export const Container = styled.div`
     position: relative;
     display: flex;
     overflow: hidden;
-    @media (max-width: 660px) {
+    @media (max-width: 930px) {
         display: block;
         overflow: auto;
       }

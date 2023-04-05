@@ -15,7 +15,6 @@ import {
     VerseText,
     ButtonContainer,
     Colon,
-    Strong, 
     Icon, 
     DescriptionContainer
 } from "./style"
@@ -44,7 +43,7 @@ export default function Bible() {
                     verses: verses,
                     colon: ':'
                 }])
-            }).catch((err) => {
+            }).catch(() => {
                setDisplay([{
                     text: 'Desculpe, não foi possível localizar nenhum versículo :/'
                 }]);
@@ -62,20 +61,20 @@ export default function Bible() {
     return (
         <BibleContainer>
             <Title large>Bíblia Digital</Title>
-            <Subtitle>* Digite o <Strong>livro</Strong>, <Strong>capítulo</Strong> e <Strong>versículo</Strong> que queira ler.</Subtitle>
+            <Subtitle>*Digite o <strong>livro</strong>, <strong>capítulo</strong> e <strong>versículo</strong> que queira ler.</Subtitle>
             <BookContainer>
                 <Mimic>
-                    <InputTitle rel="book">Livro</InputTitle>
-                    <InputBook required name="book" type="text" value={book} onChange={(e) => setBook(e.target.value)} />
+                    <InputTitle>Livro</InputTitle>
+                    <InputBook placeholder="e.g. João" required name="book" type="text" value={book} onChange={(e) => setBook(e.target.value)} />
                 </Mimic>
                 <Mimic>
-                    <InputTitle rel="chapter">Capítulo</InputTitle>
-                    <InputChapter required name="chapter" type="number" value={chapter} onChange={(e) => setChapter(e.target.value)} />
+                    <InputTitle>Capítulo</InputTitle>
+                    <InputChapter placeholder="e.g. 14" required name="chapter" type="number" value={chapter} onChange={(e) => setChapter(e.target.value)} />
 
                 </Mimic>
                 <Mimic>
-                    <InputTitle rel="verse">Versículo</InputTitle>
-                    <InputVerse required name="verse" type="number" value={verses} onChange={(e) => setVerses(e.target.value)} />
+                    <InputTitle>Versículo</InputTitle>
+                    <InputVerse placeholder="e.g. 6" required name="verse" type="number" value={verses} onChange={(e) => setVerses(e.target.value)} />
                 </Mimic>
 
             </BookContainer>

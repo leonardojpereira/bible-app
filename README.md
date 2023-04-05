@@ -1,3 +1,5 @@
+![print_app](https://user-images.githubusercontent.com/87662269/222013732-3d2480ef-b3fb-4e9c-a342-bcf81184f5a1.JPG)
+
 <h1 align="center">
  BIBLE APP 📋
 </h1>
@@ -31,7 +33,7 @@ Como estilo, aderi pelo Styled-Components.
 ## :link: Deploy
 
 ```
-EM BREVE
+https://digitalbible.netlify.app/
 ```
 
 ## Imagem / Icones
