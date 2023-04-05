@@ -6,7 +6,7 @@ export default function Banner() {
         <BannerContainer>
             <ImgBanner src={bannerImage} alt='banner'/>
             <TextContainer>
-                <Text>Deus proteje</Text>
+                <Text>Deus protege</Text>
                 <Text>Os que tratam os outros</Text>
                 <Text>Com justiça e guarda</Text>
                 <Text>Os que lhe obedecem</Text>
